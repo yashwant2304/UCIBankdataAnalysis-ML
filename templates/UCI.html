@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:Yellow">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h1>Portuguese bank - Prdiction of term deposit subscription</h1>
+			<!--<img src  = "bank.gif" align = right height = "400" width = "400">-->
+            <h3>Job type of customer</h3>
+		<select name="Job_type" id="job" required="required">
+                <option value="Student">Student</option>
+                <option value="admin.">admin.</option>
+                <option value="management">management</option>
+				<option value = "blue-collar">blue-collar</option>
+				<option value = "entrepreneur">entrepreneur</option>
+				<option value = "housemaid">housemaid</option>
+				<option value = "retired">retired</option>
+				<option value = "self-employed">self-employed</option>
+				<option value = "services">services</option>
+				<option value = "technician">technician</option>
+				<option value = "unemployed">unemployed</option>		
+				<option value = "unknown">unknown</option>
+		</select>
+            <h3>Contact type of customer</h3><br>
+		<select name = "contact_type" id = "contact_type" required = "required">
+				<option value = "unknown">unknown</option>
+				<option value = "cellular">cellular</option>
+				<option value = "telephone">telephone</option>
+		</select>
+			<h3>Is customer having Housing loan?</h3>
+		<select name = "home_loan" id = "home_loan" required = "required">
+				<option value = "Yes">Yes</option>
+				<option value = "No">No</option>
+		</select>
+			<h3>Is customer having Personal loan?</h3>
+		<select name = "personal_loan" id = "personal_loan" required = "required">
+				<option value = "Yes">Yes</option>
+				<option value = "No">No</option>
+		</select>
+			<h3>Date of month on which customer is contacted?</h3>
+		<input type = "number" id = "date" min = "1" max = "31" name = "date" required = "required">
+		
+			<h3>Number of previous calls during this campaign</h3>
+		<input id="campaign" name="campaign_calls" min = "0" required="required">
+		
+			<h3>Customer balance</h3>
+		<input id="balance" name="balance" required="required">
+		
+			<h3>Call Duration(in seconds)</h3>
+		<input id="Duration" name="Duration" required="required">
+		
+			<h3>Number of days since previous call:</h3>
+		<input id="previous" name="previous" required="required">
+			
+		
+		
+        <br><br><button id="sub" type="submit ">Submit</button>
+        <br>
+
+
+
+
+        </form>
+
+
+
+        <br><h3>{{ prediction_text }}<h3>
+    </div>
+	<style>
+        body {
+            background-color: green;
+            text-align: center  ;
+            padding: 0px;
+        }
+		
+		select:focus {
+        min-width: 300px;
+        width: 400px;
+    }
+        
+        
+    </style>
+</body>
+
+</html>
